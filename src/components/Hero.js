@@ -1,8 +1,10 @@
 import React from 'react'
 import './Hero.css'
+import Embarkcard from './embarkcard'
 
 const Hero = () => {
     return (
+        <>
         <div className='hero' id='hero'>
             <div className='content'>
                 <p></p>
@@ -12,6 +14,9 @@ const Hero = () => {
                 <button href='/' className='button'>Free Consultation</button>
             </div>
         </div>
+
+        <Embarkcard />
+        </>
     )
 }
 
