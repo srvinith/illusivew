@@ -2,19 +2,19 @@ import React from 'react'
 import '../Components/Hero.css'
 import { Card, Accordion } from 'react-bootstrap';
 import EmbarkCards from './Emabrdata'
-import Card1 from '../images/card-img-1.jpeg'
 import Carousel from "react-multi-carousel";
 import testimonial from './Testimonialdata';
 import faq from './Faq';
-import {Link} from 'react-router-dom'
-import { FaPhone} from "react-icons/fa";
+import { Link } from 'react-router-dom'
+import { FaPhone } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import Logo from  '../images/footer-logo.png'
+import Logo from '../images/footer-logo.png'
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
+import services from './servicesdata';
 
 
 
@@ -43,7 +43,7 @@ const Hero = () => {
     //         boxElement.removeEventListener('wheel', handleWheel);
     //     };
     // }, []);
-    
+
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -108,44 +108,32 @@ const Hero = () => {
                 <div className="container">
                     <h2 className='sec-title'>Explore Our wide range of services to meet your needs</h2>
                     <div className="line"></div>
-                    <div className="box-scroll" >
-                        <div className="scroll-row">
-                            <div className="cards" loading="lazy">
-                                <div className="row card-lis">
-                                    <div className="col-md-6">
-                                        <img src={Card1} alt="" className='' style={{ width: '20rem' }} />
-                                    </div>
-                                    <div className="col-md-6">
-
-                                    </div>
+                    <div class="box-wrapper">
+                        {
+                            services.map((service,i)=>
+                            <figure class="shape-box shape-box_half" key={i}>
+                            <img src={service.img} alt="" />
+                            <div class="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
+                            <figcaption>
+                                <div class="show-cont">
+                                    {/* <h3 class="card-no"></h3> */}
+                                    <h4 class="card-main-title">{service.title}</h4>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="scroll-row">
-                            <div className="cards">
-                                <div className="row card-lis">
-                                    <div className="col-md-6">
-                                        <img src={Card1} alt="" className='' style={{ width: '20rem' }} loading="lazy"/>
-                                    </div>
-                                    <div className="col-md-6">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="scroll-row">
-                            <div className="cards">
-                                <div className="row card-lis">
-                                    <div className="col-md-6">
-                                        <img src={Card1} alt="" className='' style={{ width: '20rem' }} loading="lazy" />
-                                    </div>
-                                    <div className="col-md-6">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                                <p class="card-content">
+                                {service.desc} <br /><br />
+                                    <ol>
+                                        <li>{service.lisOne}</li>
+                                        <li>{service.lisTwo}</li>
+                                        <li>{service.lisThree}</li>
+                                    </ol>
+                                </p>
+                               
+                            </figcaption>
+                            <span class="after"></span>
+                        </figure>
+                            )
+                        }
+                       
                     </div>
                 </div>
 
@@ -170,7 +158,7 @@ const Hero = () => {
                                 return (
                                     <div className="content mt-5 p-3" key={index}>
                                         <div className='card-testi'>
-                                            <img src={imageUrl.img} alt='user-img' className='testi-profile'loading="lazy" />
+                                            <img src={imageUrl.img} alt='user-img' className='testi-profile' loading="lazy" />
                                             <center><h5 className='mt-5'>{imageUrl.testihead}</h5></center>
                                             <p ><span className='testiname'>{imageUrl.Name}</span><br />
                                                 <span>{imageUrl.testispan}</span></p>
@@ -232,7 +220,7 @@ const Hero = () => {
 
                             </div>
                             <div className="col-md-6">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7842.032350260342!2d77.036344!3d10.655851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8370d5cf1c86f%3A0x50220f1c97a228c5!2sDr.%20Mahalingam%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sus!4v1700297111096!5m2!1sen!2sus" width="600" height="450" style={{ border: '0',borderRadius:'10px', }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7842.032350260342!2d77.036344!3d10.655851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8370d5cf1c86f%3A0x50220f1c97a228c5!2sDr.%20Mahalingam%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sus!4v1700297111096!5m2!1sen!2sus"  className='map' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>
@@ -243,18 +231,18 @@ const Hero = () => {
             <footer className='footer-sec'>
                 <div className="container">
                     <div className="row d-flex align-items-center">
-                       
+
                         <div className="col-6 col-sm-6 col-md-6 col-lg-6">
                             <img src={Logo} alt="footer-logo" className='footer-logo' />
                         </div>
                         <div className="col-6 col-sm-6 col-md-6 col-lg-6">
-                          <h2>Follow us on</h2>
-                          <p className='social-media-link'>
-                            <Link to='https://www.facebook.com/illusiview' className='media-lis'>{<FaFacebook/>}</Link>
-                            <Link to='https://www.instagram.com/illusiview/' className='media-lis'>{<FaInstagramSquare/>}</Link>
-                            <Link to='https://www.youtube.com/@illusiview' className='media-lis'>{<IoLogoYoutube/>}</Link>
-                            <Link to='https://api.whatsapp.com/message/M5Z26VDYKDKQN1?autoload=1&app_absent=0' className='media-lis'>{<IoLogoWhatsapp/>}</Link>
-                          </p>
+                            <h2>Follow us on</h2>
+                            <p className='social-media-link'>
+                                <Link to='https://www.facebook.com/illusiview' className='media-lis'>{<FaFacebook />}</Link>
+                                <Link to='https://www.instagram.com/illusiview/' className='media-lis'>{<FaInstagramSquare />}</Link>
+                                <Link to='https://www.youtube.com/@illusiview' className='media-lis'>{<IoLogoYoutube />}</Link>
+                                <Link to='https://api.whatsapp.com/message/M5Z26VDYKDKQN1?autoload=1&app_absent=0' className='media-lis'>{<IoLogoWhatsapp />}</Link>
+                            </p>
                         </div>
                     </div>
                     <div className="d-flex align-items-center justify-content-center p-3">
