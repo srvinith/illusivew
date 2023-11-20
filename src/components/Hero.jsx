@@ -87,7 +87,7 @@ const Hero = () => {
                     <div className="embark-card-con ">
                         {
                             EmbarkCards.map((embak, id) =>
-                                <Card style={{ width: '20rem' }} className='cardbox' key={{ id }} loading="lazy">
+                                <Card  className='cardbox' key={{ id }} loading="lazy">
                                     <Card.Img className='card-img' variant="top" src=
                                         {embak.cardImg} />
                                     <Card.Body>
