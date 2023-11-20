@@ -11,3 +11,22 @@
     border-bottom: 2px solid  #fff !important;
     width: fit-content;
 }
+.con-lis{
+    display: flex !important;
+    color: #000;
+    text-decoration: none;
+}
+.contact-li li{
+    padding: 10px 0px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.footer-logo{
+    width: 200px;
+    height: fit-content;
+}
+.social-media-link .media-lis{
+margin: 0px 10px;
+font-size: 20px;
+color: #000;
+}
