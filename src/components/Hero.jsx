@@ -15,6 +15,9 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import services from './servicesdata';
+import Blog from '../images/vr-blog.webp'
+import Gif from '../images/gif.gif'
+import Vr1 from '../images/vr-12.jpg'
 
 
 
@@ -104,6 +107,51 @@ const Hero = () => {
 
 
             </section>
+            <section>
+                    <div className="container">
+                    <h2 className='sec-title my-5'>Always check our latest blog</h2>
+                    <div className="line"></div>
+                        <div className="row">
+                            <div className="col-md-7">
+                       <div className="blog-img-con">
+                       <img src={Blog} alt="blog img"  className='img-fluid'/>
+                       <div className="blog-writer">
+                        <div className="bloger-img">
+                            <img src={Blog} alt="" />          
+                        </div>
+                        <div className="bloger-name">
+                           <h4> Arjun</h4>
+                           <h6>Admin</h6>
+
+                        </div>
+                       </div>
+                       </div>
+                            </div>
+                            <div className="col-md-5">
+                                <div className="side-blog">
+                                    <div className="d-flex align-items-center my-4">
+                                       <div className="">
+                                       <h4>We can drop into VR mode to view any photo</h4>
+                                        <p>Albert firdaus</p>
+                                       </div>
+                                       <div className="img-side-blog">
+                                        <img src={Gif} alt="blog-side" className='img-fluid' />
+                                       </div>
+                                    </div>
+                                    <div className="d-flex align-items-center my-4">
+                                       <div className="">
+                                       <h4>“VR Game of the Year” Reads a Fading Neon Sign Outside of a Dying Mall</h4>
+                                        <p>A look at the current state of virtual reality, a once-burgeoning art razed by corporate malpractice, and how it might one day be…</p>
+                                       </div>
+                                       <div className="img-side-blog">
+                                        <img src={Vr1} alt="blog-side" className='img-fluid' />
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
             <section className='' id='services'>
                 <div className="container">
                     <h2 className='sec-title'>Explore Our wide range of services to meet your needs</h2>
@@ -136,9 +184,8 @@ const Hero = () => {
                        
                     </div>
                 </div>
-
-
             </section>
+       
             <section className='' id='testimonial'>
                 <div className="container">
                     <h2 className='sec-title'>What Our Clients Say</h2>
